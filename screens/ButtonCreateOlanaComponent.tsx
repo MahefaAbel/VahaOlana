@@ -2,12 +2,13 @@ import * as React from 'react';
 import { Dimensions, FlatList, StyleSheet, View } from 'react-native';
 import { ListItem, Icon, Button, Text, Input } from 'react-native-elements'
 
-export default function ButtonCreateOlanaComponent() {
+export default function ButtonCreateOlanaComponent({ navigation }) {
   return (
     <View style={styles.container}>
         <Button
             title="Publier un Probleme"
             buttonStyle={styles.button}
+            onPress={() => navigation.navigate("CreateOlana")}
         />
     </View>
   );

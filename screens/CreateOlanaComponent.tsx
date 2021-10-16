@@ -6,10 +6,14 @@ export default function CreateOlanaComponent() {
   return (
     <View style={styles.container}>
       <Input
-        placeholder='INPUT WITH ICON'
+        placeholder='Decriver le probleme'
         // leftIcon={{ type: 'font-awesome', name: 'chevron-left' }}
         multiline = {true}
-        numberOfLines = {4}
+        numberOfLines = {6}
+    />
+    <Button
+      title="Publier"
+      buttonStyle={styles.button}
     />
     </View>
   );
@@ -19,13 +23,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     flexDirection: "column",
-    backgroundColor: "red",
+    // backgroundColor: "red",
 
     // Full With - Began
     alignSelf: 'stretch',
     // width: Dimensions.get('window').width
     // Full With - End
-    maxHeight: 100,
+    // maxHeight: 100,
   },
   title: {
     fontSize: 20,
@@ -39,5 +43,8 @@ const styles = StyleSheet.create({
   listItem: {
     // flex: 1,
     flexDirection: "column",
+  },
+  button: {
+    height: 60,
   },
 });
