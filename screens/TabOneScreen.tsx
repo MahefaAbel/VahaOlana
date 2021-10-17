@@ -4,7 +4,13 @@ import { Text, View } from '../components/Themed';
 import ButtonCreateOlanaComponent from './ButtonCreateOlanaComponent';
 import ListOlanaScreen from './ListOlanaScreen';
 
-export default function TabOneScreen({ navigation }) {
+export default function TabOneScreen({ navigation, route }) {
+  try{
+    const { content } = route.params;
+    console.log("TabOneScreen:content:", content)
+  }catch(e){
+    console.error("TabOneScreen:content:", e);
+  }
   return (
     <View style={styles.container}>
       {/* <CreateOlanaComponent /> */}

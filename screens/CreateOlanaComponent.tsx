@@ -2,7 +2,13 @@ import * as React from 'react';
 import { Dimensions, FlatList, StyleSheet, View } from 'react-native';
 import { ListItem, Icon, Button, Text, Input } from 'react-native-elements'
 
-export default function CreateOlanaComponent() {
+export default function CreateOlanaComponent({navigation}) {
+  const [content, setContent] = React.useState("");
+
+  const onPressPublish = () => {
+    // console.log("content: ", content);
+    navigation.navigate("Root", { content: content });
+  };
   return (
     <View style={styles.container}>
       <Input
@@ -10,10 +16,12 @@ export default function CreateOlanaComponent() {
         // leftIcon={{ type: 'font-awesome', name: 'chevron-left' }}
         multiline = {true}
         numberOfLines = {6}
+        onChangeText={(value) => setContent(value)}
     />
     <Button
       title="Publier"
       buttonStyle={styles.button}
+      onPress={() => onPressPublish()}
     />
     </View>
   );
